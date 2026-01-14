@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>PS5 Web Retro Console</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BOOT -->
+<div id="startup" onclick="bootPS()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/PlayStation_logo.svg">
+  <p>TAP TO START</p>
+</div>
+
+<!-- HOME -->
+<div id="home">
+  <header>
+    <h1>Game Library</h1>
+    <button onclick="openSettings()">⚙</button>
+  </header>
+
+  <div id="games">
+    <div class="card add" onclick="pickGame()">＋ Add Game</div>
+  </div>
+</div>
+
+<!-- EMULATOR -->
+<div id="emulator">
+  <div id="screen">
+    <div id="player"></div>
+    <div id="fps">FPS: 0</div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div id="controls">
+    <div class="dpad">
+      <button data-k="ArrowUp">▲</button>
+      <button data-k="ArrowLeft">◀</button>
+      <button data-k="ArrowRight">▶</button>
+      <button data-k="ArrowDown">▼</button>
+    </div>
+
+    <div class="actions">
+      <button data-k="i">▲</button>
+      <button data-k="j">■</button>
+      <button data-k="k">✖</button>
+      <button data-k="l">●</button>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings">
+  <h3>Settings</h3>
+  <label><input type="checkbox" id="perf" checked> Performance Mode</label><br>
+  <label><input type="checkbox" id="vib" checked> Vibration</label><br><br>
+  <button onclick="closeSettings()">Close</button>
+</div>
+
+<input type="file" id="file" hidden>
+
+<script src="app.js"></script>
+</body>
+</html>

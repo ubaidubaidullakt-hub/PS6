@@ -1,0 +1,94 @@
+:root{
+  --blue:#0070d1;
+  --glass:rgba(255,255,255,.12);
+}
+
+*{box-sizing:border-box;touch-action:none}
+
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:Segoe UI,system-ui;
+  overflow:hidden;
+}
+
+#startup{
+  position:fixed;inset:0;
+  background:white;color:black;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  z-index:1000;
+}
+
+#startup img{width:90px}
+
+#home{
+  height:100%;
+  background:radial-gradient(circle at top,#1a2a6c,#000);
+}
+
+header{
+  display:flex;justify-content:space-between;
+  padding:15px;
+}
+
+#games{
+  display:flex;
+  gap:20px;
+  padding:20px;
+  overflow-x:auto;
+}
+
+.card{
+  min-width:160px;
+  height:160px;
+  background:var(--glass);
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:18px;
+}
+
+.add{border:2px dashed white}
+
+#emulator{display:none;height:100%}
+
+#screen{height:45%;position:relative}
+
+#fps{
+  position:absolute;top:5px;left:5px;
+  font-size:12px;background:black;padding:3px
+}
+
+#controls{
+  height:55%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.dpad, .actions{
+  display:grid;
+  grid-template-columns:repeat(3,60px);
+  grid-template-rows:repeat(3,60px);
+}
+
+button{
+  background:var(--glass);
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:20px;
+}
+
+#settings{
+  position:fixed;
+  top:10px;left:10px;
+  background:black;
+  border:1px solid var(--blue);
+  padding:15px;
+  display:none;
+  z-index:900;
+}
